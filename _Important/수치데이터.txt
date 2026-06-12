@@ -1,0 +1,64 @@
+📊 텍스트 데이터 구조
+📌 기본 데이터
+1. 현재 시간 정보
+- current_time : 업비트 주문북(orderbook)에서 가져온 타임스탬프
+- current_datetime : 현재 시스템 시간 (datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+2. 잔고 정보 (upbit.get_balances())
+- xrp_balance : XRP 보유량
+- krw_balance : 원화(KRW) 보유량
+- xrp_avg_buy_price : XRP 평균 매수가격
+
+3. 주문북 정보
+- orderbook : 업비트의 실시간 매수/매도 주문 데이터 (pyupbit.get_orderbook("KRW-XRP"))
+
+📌 OHLCV 데이터 (캔들 데이터)
+📈 업비트에서 가져오는 차트 데이터 (최대 200개, 일봉은 100개)
+- df_5m : 5분봉
+- df_1h : 1시간봉
+- df_4h : 4시간봉
+- df_day : 일봉
+
+📌 기술적 지표 (Technical Indicators)
+⏱ 5분봉 (df_5m)
+- rsi_5m : RSI (14)
+- bb_upper_5m, bb_middle_5m, bb_lower_5m : 볼린저 밴드 (20, 2σ)
+- ma_5m : 이동평균선 (20)
+- current_volume_5m : 현재 거래량
+- volume_sma_5m : 거래량 이동평균 (24개 캔들, 120분)
+- volume_ratio_5m : 거래량 비율
+
+🕐 1시간봉 (df_1h)
+- rsi_1h : RSI (14)
+- bb_upper_1h, bb_middle_1h, bb_lower_1h : 볼린저 밴드 (20, 2σ)
+- ma_1h : 이동평균선 (20)
+- current_volume_1h : 현재 거래량
+- volume_sma_1h : 거래량 이동평균 (24개 캔들, 24시간)
+- volume_ratio_1h : 거래량 비율
+
+🕓 4시간봉 (df_4h)
+- rsi_4h : RSI (14)
+- bb_upper_4h, bb_middle_4h, bb_lower_4h : 볼린저 밴드 (20, 2σ)
+- ma_4h : 이동평균선 (20)
+- current_volume_4h : 현재 거래량
+- volume_sma_4h : 거래량 이동평균 (24개 캔들, 4일)
+- volume_ratio_4h : 거래량 비율
+
+📅 일간봉 (df_day)
+- rsi_day : RSI (14)
+- bb_upper_day, bb_middle_day, bb_lower_day : 볼린저 밴드 (20, 2σ)
+- ma_day : 이동평균선 (20)
+- current_volume_day : 현재 거래량
+- volume_sma_day : 거래량 이동평균 (7일)
+- volume_ratio_day : 거래량 비율
+
+📌 요약 테이블
+카테고리	        데이터 항목
+시간 정보	        current_time, current_datetime
+잔고 정보	        xrp_balance, krw_balance, xrp_avg_buy_price
+주문북 정보	        orderbook
+OHLCV 데이터        df_5m, df_1h, df_4h, df_day
+5분봉 지표	        rsi_5m, bollinger_bands_5m, ma_5m, volume_5m
+1시간봉 지표	    rsi_1h, bollinger_bands_1h, ma_1h, volume_1h
+4시간봉 지표	    rsi_4h, bollinger_bands_4h, ma_4h, volume_4h
+일간봉 지표	        rsi_day, bollinger_bands_day, ma_day, volume_day

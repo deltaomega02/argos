@@ -1,0 +1,43 @@
+# 가상환경 세팅
+source bitcoinenv/bin/activate
+
+# 해당 디렉터리로 이동
+source bitcoinenv/bin/activate
+cd aibitcoin
+
+# 현재 실행중 .py파일 
+ps -ax | grep .py
+
+# 자동매매프로그램
+rm autotrade_vk.py
+vim autotrade_vk.py
+rm argos.py
+vim argos.py
+
+# 자동매매_추가데이터
+rm instructions_vk.md
+vim instructions_vk.md
+
+# 실시간 매매 현황
+rm streamlit_ag.py
+vim streamlit_ag.py
+
+# DB제거
+rm trading_decisions.sqlite
+
+# 자동매매프로그램 start
+nohup python3 -u argos.py > output.log 2>&1 &
+
+nohup python3 -u argos_btc.py > output.log 2>&1 &
+
+nohup python3 -u argos_long.py > output.log 2>&1 &
+nohup python3 -u argos_short.py > output.log 2>&1 &목표 & 전략
+
+# 실시간 매매 현황 start
+nohup python3 -m streamlit run argos_dashboard.py --server.port 8501 > streamlit.log 2>&1 &
+
+nohup python3 -m streamlit run streamlit_ag.py --server.port 8501 > streamlit.log 2>&1 &
+
+nohup python3 -m streamlit run streamlit_btc.py --server.port 8501 > streamlit.log 2>&1 &
+
+nohup python3 -m streamlit run streamlit_vk_nodetail.py --server.port 8501 > streamlit.log 2>&1 &
