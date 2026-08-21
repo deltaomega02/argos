@@ -28,7 +28,7 @@ Python · OpenAI API (CoT 프롬프트) · Upbit API · Streamlit (실시간 대
 | 폴더/파일 | 내용 |
 |---|---|
 | `_V1` ~ `_V10` | 버전별 코드 (프롬프트·지표 구성 변화) |
-| `_V7_BTC`, `_V7_short`, `_V8_short` | 코인별·숏 전략 분기 실험 |
+| `_V7_BTC`, `_V7_short`, `_V8_short` | 코인별·숏 전략 분기 실험 (⚠️ `_V7_BTC` 안의 파일은 실제로 ETH 용이다 — 폴더명이 잘못 붙었다) |
 | `_V10_bitcoin` | BTC 특화 + 대시보드 최종형 |
 | `argos_view_v1~v3.py`, `streamlit_ag_mk2.py` | 대시보드 변천 |
 | `_Important/` | 운영 명령어·수치 기준 메모 |
