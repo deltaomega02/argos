@@ -5,9 +5,9 @@
 > VALKYR → **ARGOS** → OMNI → METIS → HERMES → KAIROS → ATHENA
 > 전체 계보: [github.com/deltaomega02](https://github.com/deltaomega02)
 
-매매 판단에 **AI Chain-of-Thought 추론을 처음 도입**한 세대.
-1세대(VALKYR)의 룰 기반 판단이 시장 맥락을 읽지 못하는 한계를 보고,
-시장 데이터를 AI에게 단계적으로 추론시켜(관찰 → 해석 → 결론) 판단 품질을 높이려 한 실험이다.
+매매 판단을 **Chain-of-Thought 로 구조화**한 세대.
+1세대(VALKYR)도 이미 GPT-4o 로 판단했지만 단발 호출이라 근거가 남지 않았다 —
+ARGOS 는 시장 데이터를 관찰 → 해석 → 결론 순으로 추론시켜 **판단 과정을 기록에 남기는** 쪽을 시도했다.
 _V1부터 _V10까지 버전 폴더로 보존.
 
 ## 기술 스택
